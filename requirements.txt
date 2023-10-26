@@ -4,5 +4,4 @@ scikit-learn
 matplotlib.pyplot as plt
 seaborn as sns
 os
-pickle
 streamlit as st
