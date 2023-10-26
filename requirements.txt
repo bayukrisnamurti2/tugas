@@ -1,7 +1,5 @@
 pandas==1.5.3
 numpy==1.24.3
 scikit-learn
-matplotlib.pyplot==22.0.3
-seaborn==22.0.3
 streamlit==22.0.3
-pip==22.2.2
+pip==23.3.1
