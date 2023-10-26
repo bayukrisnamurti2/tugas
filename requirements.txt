@@ -1,7 +1,7 @@
 pandas==1.4.4
 numpy==1.21.5
 scikit-learn
-matplotlib.pyplot as plt
+matplotlib.pyplot==22.0.3
 seaborn as sns
 os
 streamlit as st
