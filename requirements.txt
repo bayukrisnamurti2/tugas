@@ -1,3 +1,4 @@
+pandas as pd
 numpy as np
 scikit-learn
 matplotlib.pyplot as plt
