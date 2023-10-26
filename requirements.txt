@@ -4,5 +4,5 @@ scikit-learn
 matplotlib.pyplot==22.0.3
 seaborn==22.0.3
 os
-streamlit as st
+streamli==22.0.3
 pip==22.2.2
