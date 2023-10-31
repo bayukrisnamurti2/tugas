@@ -76,10 +76,13 @@ Merupakan data yang saya dapatkan dari website kaggle dengen nama Body Fat Predi
 #### Data Discovery And Profiling
 Untuk bagian ini, kita menggunakan teknik EDA. Pertama kita mengimport semua library yang dibutuhkan,
 
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
+`import pandas as pd`
+
+`import numpy as np`
+
+`import matplotlib.pyplot as plt`
+
+`import seaborn as sns`
 
 Mari kita lanjutkan dengan memasukkan file csv yang telah di extract pada sebuah variable 
 
