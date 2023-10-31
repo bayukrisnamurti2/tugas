@@ -242,7 +242,7 @@ Pada bagian ini saya menggunakan F1 score sebagai metrik evaluasi
 Dan hasil yang didapatkan adalah 0.9999999999941458 atau 99.9%, itu berarti model ini memiliki nilai yang baik antara presisi dan recall. Karena dapat kita cari untuk mengetahui prediksi kinerja siswa yang dibutuhkan.
 
 ## Deployment
-[My Prediction App](https://nmhhj8erpopgauamq4kba5.streamlit.app/).
+[My Prediction App](https://57gajmdtnpnnvhnz52npmk.streamlit.app/).
 
 ![Alt text](image.png)
 
