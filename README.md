@@ -39,7 +39,7 @@ Menjelaskan tujuan dari pernyataan masalah:
 Data yang digunakan dalam proyek ini adalah [Body Fat Prediction Dataset]([https://www.kaggle.com/datasets/fedesoriano/body-fat-prediction-dataset/code]).
 
 
-#### Variabel-variabel pada Student Performance Prediction adalah sebagai berikut:
+#### Variabel-variabel pada Body Fat Prediction Dataset adalah sebagai berikut:
 -Density = st.number_input('Kepadatan')
 
 -BodyFat = st.number_input('Lemak Badan')
