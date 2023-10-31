@@ -88,7 +88,7 @@ Mari kita lanjutkan dengan memasukkan file csv yang telah di extract pada sebuah
 
 `df = pd.read_csv('bodyfat.csv')`
 
-Untuk melihat kolom kita masukkan untuk mengetahui tingkat pendidikan yang dicapai orang tua dll
+Untuk melihat kolom kita masukkan untuk mengetahui lemak, dll
 
 `df.head()`
 
