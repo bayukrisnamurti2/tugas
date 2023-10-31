@@ -58,7 +58,7 @@ Forearm = st.number_input('Lengan Bawah')
 ## Data Preparation
 
 #### Data Collection
-Merupakan data yang saya dapatkan dari website kaggle dengen nama Student Performance Prediction, jika tertarik bisa klik link nya di Data Understanding
+Merupakan data yang saya dapatkan dari website kaggle dengen nama Body Fat Prediction Dataset, jika tertarik bisa klik link nya di Data Understanding
 
 #### Data Discovery And Profiling
 Untuk bagian ini, kita menggunakan teknik EDA. Pertama kita mengimport semua library yang dibutuhkan,
