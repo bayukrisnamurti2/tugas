@@ -91,18 +91,24 @@ Untuk mengetahui hasil ujiannya kita gunakan ini
 Selanjutnya masukkan plot figurnya
 
 `plt.figure(figsize=(10,6))`
+
 `sns.heatmap(df.corr(), annot=True)`
 
 Selanjutnya masukkan fiturnya
 `fitur = ['Density', 'BodyFat', 'Age', 'Weight','Height','Neck','Chest','Abdomen','Hip','Thigh','Knee','Ankle','Biceps','Forearm']`
+
 `x = df[fitur]`
+
 `y = df['Wrist']`
+
 `x.shape, y.shape`
 
 Untuk mengetahui hasilnya kita masukkan rumus ini
 
 `from sklearn.model_selection import train_test_split`
+
 `x_train, X_test, y_train, y_test = train_test_split(x, y, random_state = 70)`
+
 `y_test.shape`
 
 Waduh, ternyata proses nya banyak dan mari kita lanjutkan
@@ -111,26 +117,34 @@ Waduh, ternyata proses nya banyak dan mari kita lanjutkan
 Sebelumnya mari kita import library yang akan kita gunakan
 
 `from sklearn.linear_model import LinearRegression`
+
 `lr = LinearRegression()`
+
 `lr.fit(x_train,y_train)`
+
 `predik = lr.predict(X_test)`
 
 Selanjutnya masukkan akurasi model regresi liniernya
 
 `y = lr.score(X_test, y_test)`
+
 `print('Akurasi Model Regresi Linier : ', y)`
 
 Kita masukkan imputan dan prediksinya
 
 `#Density = 1.108900 (float64), BodyFat = 47.500000 (float64), Age = 81.000000 (int64), Weight = 363.150000 (float64), Height = 77.750000 (float64), Neck = 51.200000 (float64), Chest = 136.200000 (float64), Abdomen = 148.100000 (float64), Hip = 147.700000 (float64), Thigh = 87.300000 (float64), Knee = 49.100000 (float64), Ankle = 33.900000 (float64), Biceps = 45.000000 (float64)`
+
 `inputan = np.array([[1.108900, 47.500000, 81.000000, 363.150000, 77.750000, 51.200000, 136.200000, 148.100000, 147.700000, 87.300000, 49.100000, 33.900000, 45.000000, 34.900000]]) 
 prediksi = lr.predict(inputan)`
+
 `print('Estimasi Persentase Lemak Tubuh : ',prediksi)`
 
 Sekarang modelnya sudah selesai, mari kita eksport sebagai sav agar nanti kita bisa gunakan pada project web streamlit kita
 
 `import pickle`
+
 `filename = 'bodyfat.sav'`
+
 `pickle.dump(lr,open(filename,'wb'))`
 
 
@@ -139,11 +153,15 @@ Pada bagian ini saya menggunakan F1 score sebagai metrik evaluasi
 - F1 Score: F1 score adalah rata-rata harmonis antara presisi dan recall. F1 score memberikan keseimbangan antara presisi dan recall. F1 score dihitung dengan menggunakan rumus sebagai berikut :
 
 `from sklearn.linear_model import LinearRegression`
+
 `lr = LinearRegression()`
+
 `lr.fit(x_train,y_train)`
+
 `predik = lr.predict(X_test)`
 
 `y = lr.score(X_test, y_test)`
+
 `print('Akurasi Model Regresi Linier : ', y)`
 
 Dan hasil yang didapatkan adalah 0.7205555367678251 atau 72%, itu berarti model ini memiliki nilai yang baik antara presisi dan recall. Karena dapat kita cari untuk mengetahui prediksi persentase lemak tubuh yang dibutuhkan.
