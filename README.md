@@ -40,20 +40,20 @@ Data yang digunakan dalam proyek ini adalah [Body Fat Prediction Dataset](kaggle
 
 
 #### Variabel-variabel pada Student Performance Prediction adalah sebagai berikut:
-Density = st.number_input('Kepadatan')
-BodyFat = st.number_input('Lemak Badan')
-Age = st.number_input('Umur')
-Weight = st.number_input('Berat')
-Height = st.number_input('Tinggi')
-Neck = st.number_input('Leher')
-Chest = st.number_input('Dada')
-Abdomen = st.number_input('Perut')
-Hip = st.number_input('Pinggul')
-Thigh = st.number_input('Paha')
-Knee = st.number_input('Lutut')
-Ankle = st.number_input('Pergelangan Kaki')
-Biceps = st.number_input('Bisep')
-Forearm = st.number_input('Lengan Bawah')
+-Density = st.number_input('Kepadatan')
+-BodyFat = st.number_input('Lemak Badan')
+-Age = st.number_input('Umur')
+-Weight = st.number_input('Berat')
+-Height = st.number_input('Tinggi')
+-Neck = st.number_input('Leher')
+-Chest = st.number_input('Dada')
+-Abdomen = st.number_input('Perut')
+-Hip = st.number_input('Pinggul')
+-Thigh = st.number_input('Paha')
+-Knee = st.number_input('Lutut')
+-Ankle = st.number_input('Pergelangan Kaki')
+-Biceps = st.number_input('Bisep')
+-Forearm = st.number_input('Lengan Bawah')
 
 ## Data Preparation
 
