@@ -5,49 +5,55 @@
 
 ## Domain Proyek
 
-Prediksi kinerja siswa ini berisi informasi tentang kinerja siswa sekolah menengah atas dalam matematika, termasuk nilai dan informasi demografis mereka. Data ini dikumpulkan dari tiga sekolah menengah atas di Amerika Serikat.
+Proyek ini bertujuan untuk memprediksi persentase lemak tubuh (body fat percentage) seseorang berdasarkan sejumlah atribut fisik dan demografis.
 
 ## Business Understanding
 
-Untuk mengetahui nilai siswa SMA di Amerika Serikat.
+Untuk memprediksi persentase lemak tubuh.
 
 Bagian laporan ini mencakup:
 
 ### Problem Statements
 
 Menjelaskan pernyataan masalah latar belakang:
-- Pernyataan Masalah 1 : Bagaimana kita dapat memprediksi performa siswa dalam ujian akhir tahun?
-- Pernyataan Masalah 2 : Apa faktor-faktor yang paling memengaruhi performa siswa?
-- Pernyataan Masalah 3 : Bagaimana sekolah dapat mengidentifikasi siswa yang mungkin memerlukan bantuan tambahan?
+- Pernyataan Masalah 1: Bagaimana kita dapat memprediksi persentase lemak tubuh dengan akurasi tinggi?
+- Pernyataan Masalah 2: Apa faktor-faktor yang paling memengaruhi persentase lemak tubuh?
+- Pernyataan Masalah 3: Bagaimana prediksi persentase lemak tubuh ini dapat membantu individu dalam menjaga kesehatan mereka?
+
 
 
 ### Goals
 
 Menjelaskan tujuan dari pernyataan masalah:
-- Jawaban pernyataan masalah 1: Membangun model prediksi performa siswa dengan akurasi yang tinggi.
-- Jawaban pernyataan masalah 2: Mengidentifikasi faktor-faktor utama yang memengaruhi performa siswa, seperti jumlah jam belajar, kehadiran, dll.
-- Jawaban pernyataan masalah 3: Memberikan rekomendasi untuk sekolah tentang siswa yang perlu mendapatkan perhatian tambahan.
+- Jawaban pernyataan masalah 1: Membangun model prediksi persentase lemak tubuh yang akurat.
+- Jawaban pernyataan masalah 2: Mengidentifikasi atribut fisik dan demografis yang paling berpengaruh terhadap persentase lemak tubuh.
+- Jawaban pernyataan masalah 3: Memberikan panduan kepada individu dalam menjaga kesehatan berdasarkan prediksi persentase lemak tubuh.
 
 
 ### Solution statements
-- Kami akan menggunakan beberapa algoritma machine learning seperti regresi linear, regresi logistik, dan decision trees untuk membandingkan dan memilih model terbaik.
-- Kami akan melakukan penyetelan hyperparameter untuk meningkatkan model baseline.
+- Kami akan menggunakan algoritma regresi untuk membangun model prediksi.
+- Kami akan mengevaluasi model dengan metrik seperti R-squared dan Mean Absolute Error (MAE)
 
 
 ## Data Understanding
-Data yang digunakan dalam proyek ini adalah [Student performance prediction](https://www.kaggle.com/datasets/rkiattisak/student-performance-in-mathematics/data).
+Data yang digunakan dalam proyek ini adalah [Body Fat Prediction Dataset](kaggle datasets download -d fedesoriano/body-fat-prediction-dataset).
 
 
 #### Variabel-variabel pada Student Performance Prediction adalah sebagai berikut:
-0   gender = merupakan jenis kelamin bisa laki laki atau perempuan (object)                   
-1   race/ethnicity = merupakan asal usul etnis atau kelompok seseorang seperti Asia, dll (object)            
-2   parental level of education = merupakan tingkat pendidikan yang dicapai oleh orang tua atau wali (object)
-3   lunch = merupakan jenis makanan yang dimakan siang hari (object)
-4   test preparation course = merupakan pelatihan yang diambil untuk mempersiapkan diri menghadapi ujian (object) 
-5   math score = merupakan hasil ujian matematika (int64)      
-6   reading score = merupakan hasil ujian membaca (int64)        
-7   writing score = merupakan hasil ujian menulis (int64)         
-8   avarage score = merupakan nilai rata - rata dari hasil ujian yang diberikan (float64)
+Density = st.number_input('Kepadatan')
+BodyFat = st.number_input('Lemak Badan')
+Age = st.number_input('Umur')
+Weight = st.number_input('Berat')
+Height = st.number_input('Tinggi')
+Neck = st.number_input('Leher')
+Chest = st.number_input('Dada')
+Abdomen = st.number_input('Perut')
+Hip = st.number_input('Pinggul')
+Thigh = st.number_input('Paha')
+Knee = st.number_input('Lutut')
+Ankle = st.number_input('Pergelangan Kaki')
+Biceps = st.number_input('Bisep')
+Forearm = st.number_input('Lengan Bawah')
 
 ## Data Preparation
 
