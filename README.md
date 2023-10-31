@@ -36,7 +36,7 @@ Menjelaskan tujuan dari pernyataan masalah:
 
 
 ## Data Understanding
-Data yang digunakan dalam proyek ini adalah [Body Fat Prediction Dataset](kaggle datasets download -d fedesoriano/body-fat-prediction-dataset).
+Data yang digunakan dalam proyek ini adalah [Body Fat Prediction Dataset]([https://www.kaggle.com/datasets/fedesoriano/body-fat-prediction-dataset/code]).
 
 
 #### Variabel-variabel pada Student Performance Prediction adalah sebagai berikut:
