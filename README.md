@@ -97,7 +97,7 @@ Selanjutnya masukkan ini
 
 `sns.heatmap(df.isnull())`
 
-Untuk mengetahui hasil ujiannya kita gunakan ini
+Untuk mengetahui kita gunakan ini
 
 `df.describe()`
 
@@ -108,6 +108,7 @@ Selanjutnya masukkan plot figurnya
 `sns.heatmap(df.corr(), annot=True)`
 
 Selanjutnya masukkan fiturnya
+
 `fitur = ['Density', 'BodyFat', 'Age', 'Weight','Height','Neck','Chest','Abdomen','Hip','Thigh','Knee','Ankle','Biceps','Forearm']`
 
 `x = df[fitur]`
