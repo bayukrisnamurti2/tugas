@@ -63,157 +63,74 @@ Merupakan data yang saya dapatkan dari website kaggle dengen nama Body Fat Predi
 #### Data Discovery And Profiling
 Untuk bagian ini, kita menggunakan teknik EDA. Pertama kita mengimport semua library yang dibutuhkan,
 
-`import pandas as pd`
-`import numpy as np`
-`import matplotlib.pyplot as plt`
-`import seaborn as sns`
-`import os`
-
-Karena kita menggunakan VS Code untuk mengerjakannya maka kita ketik seperti yang dibawah
-
-`for dirname, _, filenames in os.walk('/kaggle/input/student-performance-in-mathematics/exams.csv'):`
-    `for filename in filenames:`
-        `print(os.path.join(dirname, filename))`
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 Mari kita lanjutkan dengan memasukkan file csv yang telah di extract pada sebuah variable 
 
-`df=pd.read_csv('exams.csv')`
+`df = pd.read_csv('bodyfat.csv')`
 
 Untuk melihat kolom kita masukkan untuk mengetahui tingkat pendidikan yang dicapai orang tua dll
 
 `df.head()`
 
-Selanjutnya  kita masukkan seperti dibawah untuk melihat bentuknya
+Selanjutnya  kita masukkan seperti dibawah untuk melihat info
 
-`df.shape`
+`df.info()`
 
-Untuk memeriksa apakah dataset terdapat baris yang kosong kita bisa gunakan ini
+Selanjutnya masukkan ini
 
-`df.isnull().sum()`
-
-Selanjutnya kita masukkan ekor seperti dibawah
-
-`df.tail()`
+`sns.heatmap(df.isnull())`
 
 Untuk mengetahui hasil ujiannya kita gunakan ini
 
 `df.describe()`
 
-Untuk melihat tipe data nya kita bisa menggunakan property info
+Selanjutnya masukkan plot figurnya
 
-`df.info()`
+`plt.figure(figsize=(10,6))`
+`sns.heatmap(df.corr(), annot=True)`
 
-Karena di dalamnya terdapat satu kolom yang tidak kita inginkan, maka akan kita drop kolom tersebut
+Selanjutnya masukkan fiturnya
+`fitur = ['Density', 'BodyFat', 'Age', 'Weight','Height','Neck','Chest','Abdomen','Hip','Thigh','Knee','Ankle','Biceps','Forearm']`
+`x = df[fitur]`
+`y = df['Wrist']`
+`x.shape, y.shape`
 
-`categorical=df.drop(['math score','reading score', 'writing score','avarage score'], axis=1)`
-`numerical=df[['math score','reading score', 'writing score','avarage score']]`
+Untuk mengetahui hasilnya kita masukkan rumus ini
 
-Selanjutnya kita kategorikan
-
-`categorical`
-
-Selanjutnya kita numerikan
-
-`numerical`
-
-Untuk mengkategorikan kita gunakan kategori untuk mengfaktorkan
-
-`df1= categorical.apply(lambda x: pd.factorize(x)[0])`
-
-Hasil nya seperti dibawah
-
-`df1`
-
-Untuk medatakan kita gunakan rumus dibawah
-
-`data=pd.concat([df1,numerical],axis=1,ignore_index=True)`
-
-Hasil nya seperti dibawah
-
-`data`
-
-Selanjutnya untuk membuat kolom baru kita masukkan variabel - variabelnya  
-
-`new_columns_name={0:'gender',1:'race',2:'parent education',3:'lunch',4:'preparetion tests',5:'math',6:'reading',7:'writing',8:'avarage'}`
-`data=data.rename(columns=new_columns_name)`
-
-Hasilnya seperti dibawah
-`data`
-
-Untuk mengetahui rata rata nya kita gunakan rumus ini
-
-`x=data.drop(['avarage'],axis=1)`
-`y=data['avarage']`
+`from sklearn.model_selection import train_test_split`
+`x_train, X_test, y_train, y_test = train_test_split(x, y, random_state = 70)`
+`y_test.shape`
 
 Waduh, ternyata proses nya banyak dan mari kita lanjutkan
 
 ## Modeling
 Sebelumnya mari kita import library yang akan kita gunakan
 
-`from sklearn.model_selection import train_test_split`
 `from sklearn.linear_model import LinearRegression`
-`from sklearn.metrics import mean_squared_error,r2_score`
+`lr = LinearRegression()`
+`lr.fit(x_train,y_train)`
+`predik = lr.predict(X_test)`
 
-Selanjutnya kita akan menentukan berapa persen dari dataset yang akan digunakan untuk mengetestnya kita gunakan train
+Selanjutnya masukkan akurasi model regresi liniernya
 
-`x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)`
+`y = lr.score(X_test, y_test)`
+`print('Akurasi Model Regresi Linier : ', y)`
 
-Mari kita lanjutkan dengan membuat Linear Regresinya
+Kita masukkan imputan dan prediksinya
 
-`lr= LinearRegression()`
-`model=lr.fit(x_train, y_train)`
-
-Untuk mengetahui prediksinya modelnya kita gunakan rumus ini
-
-`predict = model.predict(x_test)`
-
-Untuk mengetahui erornya kita gunakan rumus ini
-
-`(mean_squared_error(predict,y_test))**0.5`
-
-Sekarang kita akan melihat hasil ujiannya
-
-`r2_score(predict,y_test)`
-
-Selanjutnya kita akan mengimport Ridge sebagai R dan Lasso sebagai L
-
-`from sklearn.linear_model import Ridge, Lasso`
-`R=Ridge()`
-`L=Lasso()`
-
-Selanjutnya kita gunakan x_train untuk mengetahui berapa persennya
-
-`R.fit(x_train,y_train)`
-
-Mari kita prediksi Ridge nya berapa persen
-
-`predict2=R.predict(x_test)`
-`(mean_squared_error(predict2,y_test))**0.5`
-
-Nah sekarang kita akan melihat hasil ujiannya
-
-`r2_score(predict2,y_test)`
-
-Sekarang kita berganti ke Lasso untuk mengetahui berapa persennya
-
-`L.fit(x_train,y_train)`
-
-Untuk memprediksinya kita gunakan rumus ini
-
-`predict3=L.predict(x_test)`
-
-Untuk mengetahui bentuk eror nya yang di prediksi dalam bentuk persen
-
-`(mean_squared_error(predict3,y_test))**0.5`
-
-Sekarang kita gunakan prediksi hasil ujian untuk mengetahui berapa persennya
-
-`r2_score(predict3,y_test)`
+`#Density = 1.108900 (float64), BodyFat = 47.500000 (float64), Age = 81.000000 (int64), Weight = 363.150000 (float64), Height = 77.750000 (float64), Neck = 51.200000 (float64), Chest = 136.200000 (float64), Abdomen = 148.100000 (float64), Hip = 147.700000 (float64), Thigh = 87.300000 (float64), Knee = 49.100000 (float64), Ankle = 33.900000 (float64), Biceps = 45.000000 (float64)`
+`inputan = np.array([[1.108900, 47.500000, 81.000000, 363.150000, 77.750000, 51.200000, 136.200000, 148.100000, 147.700000, 87.300000, 49.100000, 33.900000, 45.000000, 34.900000]]) 
+prediksi = lr.predict(inputan)`
+`print('Estimasi Persentase Lemak Tubuh : ',prediksi)`
 
 Sekarang modelnya sudah selesai, mari kita eksport sebagai sav agar nanti kita bisa gunakan pada project web streamlit kita
 
 `import pickle`
-`filename = '1-student-performance-prediction.sav'`
+`filename = 'bodyfat.sav'`
 `pickle.dump(lr,open(filename,'wb'))`
 
 
@@ -221,31 +138,15 @@ Sekarang modelnya sudah selesai, mari kita eksport sebagai sav agar nanti kita b
 Pada bagian ini saya menggunakan F1 score sebagai metrik evaluasi
 - F1 Score: F1 score adalah rata-rata harmonis antara presisi dan recall. F1 score memberikan keseimbangan antara presisi dan recall. F1 score dihitung dengan menggunakan rumus sebagai berikut :
 
-`from sklearn.model_selection import train_test_split`
 `from sklearn.linear_model import LinearRegression`
-`from sklearn.metrics import mean_squared_error,r2_score`
+`lr = LinearRegression()`
+`lr.fit(x_train,y_train)`
+`predik = lr.predict(X_test)`
 
-`x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)`
+`y = lr.score(X_test, y_test)`
+`print('Akurasi Model Regresi Linier : ', y)`
 
-`lr= LinearRegression()`
-`model=lr.fit(x_train, y_train)`
-
-`predict = model.predict(x_test)`
-
-`(mean_squared_error(predict,y_test))**0.5`
-
-`r2_score(predict,y_test)`
-
-`1-student-performance-prediction.ipynb`
-
-`R.fit(x_train,y_train)`
-
-`predict2=R.predict(x_test)`
-`(mean_squared_error(predict2,y_test))**0.5`
-
-`r2_score(predict2,y_test)`
-
-Dan hasil yang didapatkan adalah 0.9999999999941458 atau 99.9%, itu berarti model ini memiliki nilai yang baik antara presisi dan recall. Karena dapat kita cari untuk mengetahui prediksi kinerja siswa yang dibutuhkan.
+Dan hasil yang didapatkan adalah 0.7205555367678251 atau 72%, itu berarti model ini memiliki nilai yang baik antara presisi dan recall. Karena dapat kita cari untuk mengetahui prediksi persentase lemak tubuh yang dibutuhkan.
 
 ## Deployment
 [My Prediction App](https://57gajmdtnpnnvhnz52npmk.streamlit.app/).
