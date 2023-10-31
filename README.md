@@ -32,7 +32,7 @@ Menjelaskan tujuan dari pernyataan masalah:
 
 ### Solution statements
 - Kami akan menggunakan algoritma regresi untuk membangun model prediksi.
-- Kami akan mengevaluasi model dengan metrik seperti R-squared dan Mean Absolute Error (MAE)
+- Kami akan mengevaluasi model dengan metrik seperti F1 score
 
 
 ## Data Understanding
