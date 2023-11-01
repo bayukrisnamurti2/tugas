@@ -40,33 +40,33 @@ Data yang digunakan dalam proyek ini adalah [Body Fat Prediction Dataset]([https
 
 
 #### Variabel-variabel pada Body Fat Prediction Dataset adalah sebagai berikut:
--Density = st.number_input('Kepadatan')
+-Density = ('Kepadatan') (float64)
 
--BodyFat = st.number_input('Lemak Badan')
+-BodyFat = ('Lemak Badan') (float64)
 
--Age = st.number_input('Umur')
+-Age = ('Umur') (int64)
 
--Weight = st.number_input('Berat')
+-Weight = ('Berat') (float64)
 
--Height = st.number_input('Tinggi')
+-Height = ('Tinggi') (float64)
 
--Neck = st.number_input('Leher')
+-Neck = ('Leher') (float64)
 
--Chest = st.number_input('Dada')
+-Chest = ('Dada') (float64)
 
--Abdomen = st.number_input('Perut')
+-Abdomen = ('Perut') (float64)
 
--Hip = st.number_input('Pinggul')
+-Hip = ('Pinggul') (float64)
 
--Thigh = st.number_input('Paha')
+-Thigh = ('Paha') (float64)
 
--Knee = st.number_input('Lutut')
+-Knee = ('Lutut') (float64)
 
--Ankle = st.number_input('Pergelangan Kaki')
+-Ankle = ('Pergelangan Kaki') (float64)
 
--Biceps = st.number_input('Bisep')
+-Biceps = ('Bisep') (float64)
 
--Forearm = st.number_input('Lengan Bawah')
+-Forearm = ('Lengan Bawah') (float64)
 
 ## Data Preparation
 
@@ -100,6 +100,8 @@ Selanjutnya masukkan ini
 
 `sns.heatmap(df.isnull())`
 
+![Alt text](image2.png) <br>
+
 Untuk mengetahui kita gunakan ini
 
 `df.describe()`
@@ -109,6 +111,8 @@ Selanjutnya masukkan plot figurnya
 `plt.figure(figsize=(10,6))`
 
 `sns.heatmap(df.corr(), annot=True)`
+
+![Alt text](image3.png) <br>
 
 Selanjutnya masukkan fiturnya
 
