@@ -100,7 +100,7 @@ Selanjutnya masukkan ini
 
 `sns.heatmap(df.isnull())`
 
-![Alt text](image2.png) <br>
+![Alt text](image2.png)
 
 Untuk mengetahui kita gunakan ini
 
@@ -112,7 +112,7 @@ Selanjutnya masukkan plot figurnya
 
 `sns.heatmap(df.corr(), annot=True)`
 
-![Alt text](image3.png) <br>
+![Alt text](image3.png)
 
 Selanjutnya masukkan fiturnya
 
