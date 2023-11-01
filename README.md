@@ -5,7 +5,7 @@
 
 ## Domain Proyek
 
-Proyek ini bertujuan untuk memprediksi persentase lemak tubuh (body fat percentage) seseorang berdasarkan sejumlah atribut fisik dan demografis.
+Proyek prediksi persentase lemak tubuh bertujuan untuk menganalisis dan memprediksi komposisi tubuh individu. Persentase lemak tubuh adalah parameter kesehatan yang krusial, dan pemahaman yang mendalam tentang faktor-faktor yang memengaruhi persentase lemak tubuh sangat penting untuk berbagai kepentingan, termasuk profesional medis, pelatih kebugaran, dan individu yang peduli akan kesehatan dan kebugaran mereka. Analisis ini akan membantu dalam mengidentifikasi hubungan antara berbagai variabel, seperti berat badan, tinggi badan, usia, dan pengukuran tubuh, dengan persentase lemak tubuh. Data yang digunakan dalam proyek ini mencakup berbagai fitur fisik dan demografis, sehingga dapat memberikan wawasan yang berguna tentang kesehatan dan kebugaran individu. Dengan informasi ini, proyek ini akan memberikan pemahaman yang lebih baik tentang komposisi tubuh manusia, yang dapat digunakan untuk mengambil keputusan kesehatan yang lebih baik.
 
 ## Business Understanding
 
