@@ -11,7 +11,7 @@ Proyek ini bertujuan untuk menganalisis dan memprediksi persentase lemak tubuh u
 
 Proyek prediksi persentase lemak tubuh bertujuan untuk memberikan wawasan yang mendalam tentang komposisi tubuh manusia. Persentase lemak tubuh adalah faktor penting dalam kesehatan dan kebugaran individu, dan pemahaman yang kuat tentang hal ini sangat penting untuk berbagai pemangku kepentingan, termasuk dokter, pelatih kebugaran, dan individu yang peduli tentang kesehatan mereka. Analisis ini akan membantu dalam mengidentifikasi faktor-faktor yang memengaruhi persentase lemak tubuh, seperti berat badan, tinggi badan, usia, dan ukuran tubuh lainnya, sehingga memungkinkan pihak-pihak yang terlibat untuk membuat keputusan yang lebih baik terkait dengan kesehatan dan kebugaran.
 
-Bagian laporan ini mencakup:
+Bagian laporan ini mencakup :
 
 ### Problem Statements
 
